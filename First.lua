@@ -1,0 +1,201 @@
+-- function aidi(n)
+--   local o = 0
+--   for i=1,n do
+--   	o=o+i
+--   end
+--   return o
+-- end
+-- pp = aidi(5)
+-- print(pp)
+
+-- function add(n)
+-- 	if n == 1 then
+-- 		return 1
+-- 	end
+-- 	return add(n-1)+n
+-- end
+-- aa = add(5)
+-- print(aa)
+-- --print(add(100000)) --栈溢出
+-- function addw(n,sum)
+-- 	if n == 1 then
+-- 		return sum+1
+-- 	end
+-- 	return addw(n-1,sum+n)
+-- end
+-- --ll=addw(100000000,0)
+-- print(ll)
+
+-- local t={1,2,3,4,5}
+-- print(t[1])
+-- function diea(t)
+-- 	local i = 1
+-- 	return function ()
+-- 		i=i+1;
+-- 		return t[i]
+-- 	end
+-- end
+-- function paoe(t)
+-- 	for i=1,#t do
+-- 		local p =0
+-- 		p=diea(t)
+-- 		print(p)
+-- 	end
+-- end
+-- paoe(t)
+-- t1 = {x=10,y=20}
+-- t2 = {x=20,y=30}
+-- mt={}
+-- mt.__mul = function (a,b)
+-- 	t.x=a.x * b.x
+-- 	t.y=a.y * b.y
+-- end
+-- setmetatable(t1,mt)
+-- t3 = t1 *t2
+-- print(t3.x)
+-- print(t3.y)
+--关系类 __eq 等于 __lt 小于 __le 小于等于
+--关系类需要 比较的对象拥有相同的比较元表
+-- for line in io.lines() do
+-- 	io.write(line,"\n")
+-- end
+-- local  function iter(a,i)
+-- 	i = i + 1
+-- 	local  v = a[i]
+-- 	if v then
+-- 		return i,v
+-- 	end
+-- end 
+-- function ipairs(a)
+-- 	return iter,a,0
+-- end
+-- function pairs(t)
+-- 	return next,t,nil
+-- end
+-- 
+--local function getnext(list,node)
+-- 	if not node then
+-- 		return list
+-- 		else
+-- 			return node.next
+-- 		end
+-- end 
+
+-- function traverse(list)
+-- 	return getnext,list,nil
+-- end
+
+-- list = nil 
+-- for line in io.lines() do
+-- 	list = {val = line,next = list}
+-- end
+
+-- for node in traverse(list)do 
+--    print(node.val)
+-- end
+--无状态迭代器
+-- local iterator
+-- function allwords()
+-- 	local state = {line = io.read(),pos = 1}
+-- 	return iterator,state
+-- end
+-- function iterator(state)
+-- 	while state.line do
+-- 		local s,e = string.find(state.line, "%w+",state.pos)
+-- 		if s then
+-- 			state.pos = e + 1
+-- 			return string.sub(state.line,s,e)
+-- 		else
+-- 			state.line = io.read()
+-- 			state.pos = 1
+-- 		end
+-- 		return nil
+-- end
+--例子2
+-- function allwords(f)
+-- 	for line in io.lines() do
+-- 		for word in string.gmatch(line, "%w+")do
+-- 			f(word)
+-- 		end
+-- 	end
+-- end
+-- allwords(print)
+
+-- local count = 0
+-- allwords(function (w)
+-- 	if w == "hello" then
+-- 		count = count +1
+-- 	end
+-- end)
+-- print(count)
+-- local count = 0
+-- for w in allwords() do 
+--  if w =="hello" then
+--  	count=count +1 end
+--  end
+--  print(count)
+-- end
+-- i = 32
+-- local i = 0
+-- f = loadstring("i = i + 1;print(i)")
+-- g = function ()
+-- 	i = i +1;
+-- 	print(i)
+-- end
+-- f()
+-- g()
+-- print "enter function to be plotted(with variable'x'):"
+-- local l = io.read()
+-- local f = assert(loadstring("local x = ...;return"..1))
+-- for i =1 ,20 do
+--   print(string.rep("*", f(i)))
+-- end
+-- local path = "/usr/local/lib/lua/5.1/socket.so"
+-- local f = pakege.loadlib(path,"luaopen_socket")
+-- local file ,msg
+-- repeat
+-- 	print "enter a file name:"
+-- 	local name = io.read()
+-- 	if not name then return end
+-- 	file ,msg = io.open(name,r)
+-- 	if not file then print(msg) end
+-- until file
+-- --file = assert(io.open(name,"r"))
+-- file = assert(io.open("no-file","r"))
+-- co = coroutine.create(function ( )
+-- 	print("hi");
+-- end)
+-- coroutine.status(co)
+-- coroutine.resume(co)
+-- co = coroutine.create(function (  )
+-- 	for i=1,10 do 
+--     print("co",i)
+--     coroutine.yield()
+-- 	end
+-- end)
+-- coroutine.resume(co)
+-- coroutine.resume(co)
+-- local loa = {1,5,4,7,9,6,4}
+-- for k,v in ipairs(loa) do
+-- 	for j,p in ipairs(loa) do
+-- 		if p>v then
+-- 			loa[k],loa[j]=loa[j],loa[k]
+-- 		end
+-- 	end
+-- end
+-- for k,v in ipairs(loa) do
+-- 	print(k,v)
+-- end
+
+for j=1,9 do
+	local i = j;
+	local t = ""
+    while i<10 do
+        t=t..string.format(j.."x"..i.."="..i*j.." ")
+    	i = i+1
+    end
+    print(t)
+end
+function AddSomtion()
+	print("ssss")
+end
