@@ -10,7 +10,9 @@ function Todo:new(kind,time)
 	self.__index=self
 	return todo
 end
-
+function Todo:gettime(time)
+        return self.time
+end
 function Todo:settime(time)
 	self.time=time
 end
